@@ -14,11 +14,11 @@ while True:
     print('CLIENT CXN & ADDRESS\n', client_connection, '\n', client_address, '\n')
     request = client_connection.recv(1024)
     print('REQUEST\n', request, '\n')
-    http_response = b"""\
-            HTTP/1.1 200 OK
+    http_response = """\
+HTTP/1.1 200 OK
 
-            Hello, world!
-            """
+Hello, world!
+"""
     client_connection.sendall(http_response)
     client_connection.close()
 

@@ -5,7 +5,7 @@ HOST, PORT = '', 8888
 
 # create an INET (address family), STREAMing (socket type) socket
 listening_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-# add to avoid error 'Address already in use.' reason this works: previous execution
+# we add this to avoid error 'Address already in use.' reason this works: previous execution
 # left socket in TIME_WAIT state and can't be immediately reused
 listening_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 # bind socket to public host and known port
@@ -34,10 +34,9 @@ while True:
     print request
 
     http_response = """\
-
 HTTP/1.1 200 OK
 
-Hello, world!
+Hello, World!
 """
     # send data to client socket
     client_socket.sendall(http_response)
