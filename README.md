@@ -7,7 +7,7 @@ The impetus to work on this project happened to be succinctly described in the t
 
 ### Hiding the code
 ```javascript
-function t(){
+function t() {
   var el = $('.highlight');
   var isV = Number(el.css('opacity'))
     isV ? el.css('opacity', 0) : el.css('opacity', 1);
